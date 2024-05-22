@@ -11,7 +11,7 @@ import {AsyncPipe, NgIf} from "@angular/common";
 import {AuthService} from "../../services/auth.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {HttpErrorResponse} from "@angular/common/http";
-import {ValidationError} from "../../interfaces/validationError";
+import {ValidationError} from "../../interfaces/validation-error";
 
 @Component({
   selector: 'app-register',
