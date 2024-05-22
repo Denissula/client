@@ -28,9 +28,6 @@ export const routes: Routes = [
     path: 'account/:id',
     component: AccountComponent,
     canActivate: [authGuard],
-    data: {
-      roles: ['User', 'Admin']
-    }
   },
   {
     path: 'users',
