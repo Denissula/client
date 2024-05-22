@@ -1,0 +1,31 @@
+<div class="mx-60 py-10">
+  <h1 class="text-3xl font-bold text-center">All Users</h1>
+  <div class="shadow-md text-left rounded-md mt-4">
+    <table class="w-full rounded-md">
+      <thead>
+      <tr>
+        <td class="px-4 py-2 border">Full Name</td>
+        <td class="px-4 py-2 border">Email</td>
+        <td class="px-4 py-2 border">Role</td>
+        <td class="px-4 py-2 border">Phone Number</td>
+        <td class="px-4 py-2 border">Two Factory</td>
+        <td class="px-4 py-2 border">Phone Confirmed</td>
+        <td class="px-4 py-2 border">Access</td>
+      </tr>
+      </thead>
+      <tbody>
+        @for (item of user$ | async; track item.id) {
+          <tr>
+            <td class="px-4 py-2 border">{{ item.fullName }}</td>
+            <td class="px-4 py-2 border">{{ item.email }}</td>
+            <td class="px-4 py-2 border">{{ item.roles.join(' , ') || '-' }}</td>
+            <td class="px-4 py-2 border">{{ item.phoneNumber || '-' }}</td>
+            <td class="px-4 py-2 border">{{ item.twoFactorEnabled }}</td>
+            <td class="px-4 py-2 border">{{ item.phoneNumberConfirmed }}</td>
+            <td class="px-4 py-2 border">{{ item.accessFailedCount }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
